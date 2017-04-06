@@ -68,7 +68,10 @@ $(function(){
  		var D_value = myPositionTop + shopInfoHeight;
 		console.log("差值: " + D_value + ", top: " + myPosition.top); 
 		if (myPositionTop <= 0 && D_value >= 0) {
+			$(".showTitle").addClass("show");
 			console.log("Yes");
+		}else{
+			$(".showTitle").removeClass("show");
 		}
  	};
 

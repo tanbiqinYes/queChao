@@ -13,9 +13,7 @@ body,html{
 	color: #FFF;
 	background: url("../images/bg.jpg") #101010 left top no-repeat;
 	background-size: 100%;
-	height: 100%;
-	overflow-x:hidden;
-	overflow-y: auto; 
+	
 	.wrapper{
 		box-sizing: border-box;
 		padding: 0 20px 20px;
@@ -293,6 +291,24 @@ body,html{
 			@media (max-width:360px) {
 				font-size: 22px;
 			}
+		}
+	}
+
+	/******************标题显示******************/
+	.showTitle{
+		width: 100%;
+		background: #343434;
+		text-align: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: none;
+		h2{
+			font-size: 20px;
+			padding: 8px 15px;
+		}
+		&.show{
+			display: block;
 		}
 	}
 }
