@@ -1,0 +1,325 @@
+html,
+body,
+div,
+ul,
+li,
+p,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "苹方", "宋体";
+}
+li {
+  list-style-type: none;
+}
+body,
+html {
+  min-height: 100%;
+  background: #101010;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container {
+  position: relative;
+  color: #FFF;
+  background: url("../images/bg.jpg") #101010 left top no-repeat;
+  background-size: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /*************提交成功 二维码页************/
+}
+.container .wrapper {
+  box-sizing: border-box;
+  padding: 0 20px 20px;
+  background: url("../images/headerLine.png") left top no-repeat;
+  background-size: 100%;
+}
+.container .mainInfo {
+  padding-top: 30px;
+}
+.container .mainInfo h2 {
+  text-align: center;
+  font-size: 22px;
+}
+.container .mainInfo .recordSheet {
+  width: 100%;
+}
+.container .mainInfo > div {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.container .mainInfo > div label,
+.container .mainInfo > div input {
+  font-size: 15px;
+  display: inline-block;
+  box-sizing: border-box;
+  height: 42px;
+  line-height: 42px;
+}
+@media (max-width: 360px) {
+  .container .mainInfo > div label,
+  .container .mainInfo > div input {
+    font-size: 13px;
+    height: 38px;
+    line-height: 38px;
+  }
+}
+.container .mainInfo > div label {
+  width: 40%;
+  text-align: right;
+}
+.container .mainInfo > div label span {
+  font-size: 12px;
+  color: #de0b16;
+}
+.container .mainInfo > div input {
+  width: 56%;
+  border: none;
+  background: #cbcbcb;
+  border-radius: 5px;
+  padding: 0 7px;
+}
+.container .mainInfo .line {
+  height: 1px;
+  background: #626262;
+  margin-top: 40px;
+}
+.container .primaryInfo {
+  margin-top: 8px;
+}
+.container .primaryInfo .title {
+  font-size: 20px;
+  background: url("../images/arrowDown.png") #343434 92% center no-repeat;
+  background-size: 18px;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+.container .primaryInfo .title.active {
+  background: url("../images/arrowUp.png") #343434 92% center no-repeat;
+  background-size: 18px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.container .primaryInfo .shopInfoCont {
+  padding: 0 15px;
+  box-sizing: border-box;
+  display: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: #282828;
+}
+.container .primaryInfo .shopInfoCont .annualRent {
+  border: none;
+  border-radius: 5px;
+  background: #cbcbcb;
+  width: 120px;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+@media (max-width: 370px) {
+  .container .primaryInfo .shopInfoCont .annualRent {
+    width: 77px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+.container .primaryInfo .shopInfoCont .rankingNum {
+  font-size: 15px;
+  padding: 8px 0 10px;
+}
+.container .primaryInfo .shopInfoCont .proInfo label,
+.container .primaryInfo .shopInfoCont .proInfo input {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 15px;
+  border: none;
+  height: 38px;
+  line-height: 38px;
+  margin-bottom: 10px;
+}
+@media (max-width: 370px) {
+  .container .primaryInfo .shopInfoCont .proInfo label,
+  .container .primaryInfo .shopInfoCont .proInfo input {
+    height: 30px;
+    line-height: 30px;
+  }
+}
+.container .primaryInfo .shopInfoCont .proInfo label {
+  width: 30%;
+  text-align: right;
+}
+.container .primaryInfo .shopInfoCont .proInfo input {
+  width: 66%;
+  border-radius: 5px;
+  padding-left: 10px;
+  background: #cbcbcb;
+}
+.container .primaryInfo .show {
+  display: block;
+}
+.container .primaryInfo .padTop {
+  padding-top: 10px;
+}
+.container .primaryInfo .smallTitle {
+  padding: 15px 0 15px;
+  font-size: 15px;
+}
+.container .primaryInfo .checkBox_options li,
+.container .primaryInfo .radio_options li {
+  height: 24px;
+  line-height: 24px;
+  font-size: 15px;
+  display: inline-block;
+  width: 31%;
+  margin-bottom: 10px;
+}
+@media (max-width: 368px) {
+  .container .primaryInfo .checkBox_options li,
+  .container .primaryInfo .radio_options li {
+    font-size: 12px;
+  }
+}
+.container .primaryInfo .checkBox_options li span,
+.container .primaryInfo .radio_options li span {
+  background: url("../images/select.png") left top no-repeat;
+  background-size: 100%;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  cursor: pointer;
+}
+.container .primaryInfo .checkBox_options li .checkBox_hidden,
+.container .primaryInfo .radio_options li .checkBox_hidden {
+  background: url("../images/select.png") left top no-repeat;
+  background-size: 100%;
+}
+.container .primaryInfo .checkBox_options li .checkBox_show,
+.container .primaryInfo .radio_options li .checkBox_show {
+  background: url("../images/active_select.png") left top no-repeat;
+  background-size: 100%;
+}
+.container .primaryInfo .checkBox_options li .radio_eo,
+.container .primaryInfo .radio_options li .radio_eo,
+.container .primaryInfo .checkBox_options li .radio_hidden,
+.container .primaryInfo .radio_options li .radio_hidden {
+  background: url("../images/redio.png") left top no-repeat;
+  background-size: 100%;
+}
+.container .primaryInfo .checkBox_options li .radio_show,
+.container .primaryInfo .radio_options li .radio_show {
+  background: url("../images/active_redio.png") left top no-repeat;
+  background-size: 100%;
+}
+.container .primaryInfo .checkBox_options li input,
+.container .primaryInfo .radio_options li input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  border: 0px;
+  overflow: hidden;
+  height: 1px;
+  width: 14px;
+}
+.container .primaryInfo .checkBox_options textarea,
+.container .primaryInfo .radio_options textarea {
+  width: 70%;
+  height: 68px;
+}
+.container .primaryInfo .checkBox_options .short,
+.container .primaryInfo .radio_options .short {
+  width: 33%;
+}
+.container .primaryInfo .checkBox_options .long,
+.container .primaryInfo .radio_options .long {
+  width: 64%;
+}
+.container .primaryInfo .checkBox_options .shorter,
+.container .primaryInfo .radio_options .shorter {
+  width: 22%;
+}
+.container .primaryInfo .checkBox_options .longer,
+.container .primaryInfo .radio_options .longer {
+  width: 74%;
+  height: 68px;
+}
+.container .primaryInfo .checkBox_options .longest,
+.container .primaryInfo .radio_options .longest {
+  width: 100%;
+}
+.container .primaryInfo .checkBox_options .others,
+.container .primaryInfo .radio_options .others {
+  width: 100%;
+  height: 68px;
+}
+.container .primaryInfo textarea {
+  resize: none;
+  box-sizing: border-box;
+  border: none;
+  display: inline-block;
+  width: 90%;
+  height: 88px;
+  vertical-align: top;
+  background: #cbcbcb;
+  padding: 5px;
+  border-radius: 5px;
+}
+.container .primaryInfo .shopInfoCont .shortSupTime label {
+  width: 60%;
+  text-align: left;
+  vertical-align: top;
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.container .primaryInfo .halfWidth li {
+  width: 48%;
+}
+.container .storeFeedback .shopInfoCont {
+  padding-bottom: 20px;
+}
+.container .Btns {
+  margin: 25px 0 10px;
+  text-align: center;
+}
+.container .Btns .btn {
+  border: none;
+  box-sizing: border-box;
+  padding: 8px 30px;
+  font-size: 22px;
+  border-radius: 20px;
+  color: #FFF;
+  width: 48%;
+  cursor: pointer;
+}
+.container .Btns .reset {
+  background: url("../images/reset.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+.container .Btns .submit {
+  background: url("../images/submit.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+.container .QRCodeWrap {
+  padding-top: 32%;
+  text-align: center;
+}
+.container .QRCodeWrap img {
+  width: 80%;
+  margin-bottom: 12px;
+}
+.container .QRCodeWrap .QRCode {
+  margin-bottom: 20px;
+}
+.container .QRCodeWrap p {
+  font-size: 26px;
+}
+@media (max-width: 360px) {
+  .container .QRCodeWrap p {
+    font-size: 22px;
+  }
+}
