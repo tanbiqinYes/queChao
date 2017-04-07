@@ -32,7 +32,8 @@ $(function(){
 			alert("拜访人姓名不能为空");
 			visitorName.focus();
 		}else{
-			window.location.href = './QRCode.html';
+			alert("提交成功！");
+			/*window.location.href = './QRCode.html';*/
 		}
 
 		termPosition();
@@ -47,30 +48,35 @@ $(function(){
 /*
 重置事件
  */
- 	var requiredFields = $(".mainInfo input");
- 	var checkBox = $(".checkBox_options span");
- 	var radio_options = $(".radio_options span");
- 	var textareas = $(".primaryInfo textarea");
- 	var inputs = $(".primaryInfo input");
- 	$(".reset").on("click", function(){
- 		requiredFields.val('');
- 		textareas.val('');
- 		inputs.val('');
- 		checkBox.removeClass("checkBox_show");
- 		radio_options.removeClass("radio_show").addClass("radio_hidden");
+ 	var resetFun = function(){
+ 		var requiredFields = $(".mainInfo input");
+	 	var checkBox = $(".checkBox_options span");
+	 	var radio_options = $(".radio_options span");
+	 	var textareas = $(".primaryInfo textarea");
+	 	var inputs = $(".primaryInfo input");
+	 	
+	 		requiredFields.val('');
+	 		textareas.val('');
+	 		inputs.val('');
+	 		checkBox.removeClass("checkBox_show");
+	 		radio_options.removeClass("radio_show").addClass("radio_hidden");
 
+	 		//shopName.focus();
+	 		termPosition();
+
+ 	};
+ 	$(".reset").on("click", function(){
+ 		resetFun();
  		shopName.focus();
- 		termPosition();
- 	});
+	 });
 /*
-	标题定位到屏幕上方
+标题定位到屏幕上方
  */
  	var termPosition = function(){
  		var shopInfo = $(".shopInfo");
  		var shopInfoH = shopInfo.height();
 		var shopInfoPositionTop = shopInfo.offset().top - $(window).scrollTop();
  		var shopInfoD = shopInfoPositionTop + shopInfoH;
- 		console.log("top:" + shopInfoPositionTop + ";差值：" + shopInfoD);
  		//
  		var distrPositionH = $(".distributionInfo").height();
  		var distrPositionTop = shopInfoD + 8;
