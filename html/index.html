@@ -6,6 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="format-detection" content="email=no" />
 	<meta name="formate-detection" content="email=no" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">     
+	<meta content="yes" name="apple-mobile-web-app-capable">     
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">     
+	<meta content="telephone=no" name="format-detection">
 	<meta name="Keywords" content="雀巢普瑞纳（市场部）" />
 	<meta name="Description" content="访店记录表" />
 	<!--css-->
@@ -1056,6 +1060,17 @@
 	<!--js-->
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/selcet.js"></script>
+	<script type="text/javascript" src="js/fastclick.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){    
+		    if ($(".primaryInfo h2.title").length > 0) {
+	            FastClick.attach($(".primaryInfo h2.title").get(0));//去掉点击延迟和击穿
+	        }
+	        if ($(".Btns .btn").length > 0) {
+	            FastClick.attach($(".Btns .btn").get(0));//去掉点击延迟和击穿
+	        } 
+		});  
+	</script>
 </body>
 </html>

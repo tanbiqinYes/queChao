@@ -34,6 +34,8 @@ $(function(){
 		}else{
 			window.location.href = './QRCode.html';
 		}
+
+		termPosition();
  	});
  /*
  折叠事件
@@ -56,28 +58,64 @@ $(function(){
  		inputs.val('');
  		checkBox.removeClass("checkBox_show");
  		radio_options.removeClass("radio_show").addClass("radio_hidden");
+
+ 		shopName.focus();
+ 		termPosition();
  	});
 /*
 	标题定位到屏幕上方
  */
  	var termPosition = function(){
  		var shopInfo = $(".shopInfo");
- 		var shopInfoHeight = shopInfo.height();
-		var myPosition = shopInfo.offset();
-		var myPositionTop = myPosition.top;
- 		var D_value = myPositionTop + shopInfoHeight;
-		console.log("差值: " + D_value + ", top: " + myPosition.top); 
-		if (myPositionTop <= 0 && D_value >= 0) {
-			$(".showTitle").addClass("show");
-			console.log("Yes");
+ 		var shopInfoH = shopInfo.height();
+		var shopInfoPositionTop = shopInfo.offset().top - $(window).scrollTop();
+ 		var shopInfoD = shopInfoPositionTop + shopInfoH;
+ 		console.log("top:" + shopInfoPositionTop + ";差值：" + shopInfoD);
+ 		//
+ 		var distrPositionH = $(".distributionInfo").height();
+ 		var distrPositionTop = shopInfoD + 8;
+ 		var distrPositionD = distrPositionTop + distrPositionH;
+ 		//
+ 		var storeDecorationH = $(".storeDecoration").height();
+ 		var storeDecorationTop = distrPositionD + 8;
+ 		var storeDecorationD = storeDecorationTop + storeDecorationH;
+ 		//
+ 		var dFoodPositionH = $(".dogFoodPosition").height();
+ 		var dFoodPositionTop = storeDecorationD + 8;
+ 		var dFoodPositionD = dFoodPositionTop + dFoodPositionH;
+ 		//
+ 		var cFoodPositionH = $(".catFoodPosition").height();
+ 		var cFoodPositionTop = dFoodPositionD + 8;
+ 		var cFoodPositionD = cFoodPositionTop + cFoodPositionH;
+ 		//
+ 		var cwFoodPositionH = $(".catWetFoodPosition").height();
+ 		var cwFoodPositionTop = cFoodPositionD + 8;
+ 		var cwFoodPositionD = cwFoodPositionTop + cwFoodPositionH;
+ 		//
+ 		var storeFeedbackH = $(".storeFeedback").height();
+ 		var storeFeedbackTop = cwFoodPositionD + 8;
+ 		var storeFeedbackD = storeFeedbackTop + storeFeedbackH;
+
+		if (shopInfoPositionTop <= 0 && shopInfoD >= 50) {
+			$(".showTitle").addClass("show").children(".title").html('一、店铺基本信息');
+		}else if(distrPositionTop <= 0 && distrPositionD >=50){
+			$(".showTitle").addClass("show").children(".title").html('二、铺货信息');
+		}else if(storeDecorationTop <= 0 && storeDecorationD >=50){
+			$(".showTitle").addClass("show").children(".title").html('三、门店装饰');
+		}else if(dFoodPositionTop <= 0 && dFoodPositionD >=50){
+			$(".showTitle").addClass("show").children(".title").html('四、犬干粮区货架布置');
+		}else if(cFoodPositionTop <= 0 && cFoodPositionD >=50){
+			$(".showTitle").addClass("show").children(".title").html('五、猫干粮区货架布置');
+		}else if(cwFoodPositionTop <= 0 && cwFoodPositionD >=50){
+			$(".showTitle").addClass("show").children(".title").html('六、猫干粮区货架布置');
+		}else if(storeFeedbackTop <= 0 && storeFeedbackD >=50){
+			$(".showTitle").addClass("show").children(".title").html('七、店铺反馈');
 		}else{
-			$(".showTitle").removeClass("show");
+			$(".showTitle").removeClass("show").children(".title").html('');
 		}
  	};
 
-
-		
-	$("#container").on("touchmove", function(){
+	$("#container .wrapper").on("touchend", function(event){
 			termPosition();
 	});                      
  	

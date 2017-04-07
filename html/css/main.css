@@ -18,7 +18,7 @@ body,
 html {
   min-height: 100%;
   background: #101010;
-  height: 100%;
+  /* height: 100%; */
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -27,8 +27,8 @@ html {
   color: #FFF;
   background: url("../images/bg.jpg") #101010 left top no-repeat;
   background-size: 100%;
-  /*************提交成功 二维码页************/
   /******************标题显示******************/
+  /*************提交成功 二维码页************/
 }
 .container .wrapper {
   box-sizing: border-box;
@@ -48,22 +48,22 @@ html {
 }
 .container .mainInfo > div {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .container .mainInfo > div label,
 .container .mainInfo > div input {
   font-size: 15px;
   display: inline-block;
   box-sizing: border-box;
-  height: 42px;
-  line-height: 42px;
+  /* height: 42px; */
+  line-height: 1px;
 }
 @media (max-width: 360px) {
   .container .mainInfo > div label,
   .container .mainInfo > div input {
     font-size: 13px;
-    height: 38px;
-    line-height: 38px;
+    /* height: 38px; */
+    line-height: 1px;
   }
 }
 .container .mainInfo > div label {
@@ -79,7 +79,7 @@ html {
   border: none;
   background: #cbcbcb;
   border-radius: 5px;
-  padding: 0 7px;
+  padding: 13px 7px;
 }
 .container .mainInfo .line {
   height: 1px;
@@ -90,11 +90,17 @@ html {
   margin-top: 8px;
 }
 .container .primaryInfo .title {
-  font-size: 20px;
+  font-size: 18px;
   background: url("../images/arrowDown.png") #343434 92% center no-repeat;
   background-size: 18px;
+  font-weight: normal;
   border-radius: 5px;
   padding: 8px 15px;
+}
+@media (max-width: 368px) {
+  .container .primaryInfo .title {
+    font-size: 14px;
+  }
 }
 .container .primaryInfo .title.active {
   background: url("../images/arrowUp.png") #343434 92% center no-repeat;
@@ -146,6 +152,7 @@ html {
   .container .primaryInfo .shopInfoCont .proInfo input {
     height: 30px;
     line-height: 30px;
+    font-size: 12px;
   }
 }
 .container .primaryInfo .shopInfoCont .proInfo label {
@@ -167,6 +174,11 @@ html {
 .container .primaryInfo .smallTitle {
   padding: 15px 0 15px;
   font-size: 15px;
+}
+@media (max-width: 368px) {
+  .container .primaryInfo .smallTitle {
+    font-size: 12px;
+  }
 }
 .container .primaryInfo .checkBox_options li,
 .container .primaryInfo .radio_options li {
@@ -302,8 +314,24 @@ html {
   background: url("../images/submit.png") left top no-repeat;
   background-size: 100% 100%;
 }
+.container .showTitle {
+  width: 100%;
+  background: #343434;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.container .showTitle h2 {
+  font-size: 20px;
+  padding: 8px 15px;
+}
+.container .showTitle.show {
+  display: block;
+}
 .container .QRCodeWrap {
-  padding-top: 32%;
+  padding-top: 26%;
   text-align: center;
 }
 .container .QRCodeWrap img {
@@ -320,20 +348,4 @@ html {
   .container .QRCodeWrap p {
     font-size: 22px;
   }
-}
-.container .showTitle {
-  width: 100%;
-  background: #343434;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-}
-.container .showTitle h2 {
-  font-size: 20px;
-  padding: 8px 15px;
-}
-.container .showTitle.show {
-  display: block;
 }
